@@ -34,6 +34,7 @@ def conundrum_game():
         guess = input('Enter your answer:')
         if guess == random_word:
             print('Congratulations! You got it!')
+            break
         else:
             print("Sorry, that's incorrect")
 
