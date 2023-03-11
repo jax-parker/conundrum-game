@@ -25,8 +25,16 @@ def conundrum_game():
     random_word = random.choice(word_list)
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
     guess = ''
-    print(scrambled_word)
- 
+    
+
+def user_guess():
+    print(f'Your conundrum is: {scrambled_word}')
+    while guess != random_word:
+        guess = input('What is the unscrambled word?')
+        if guess == random_word:
+            print('Congratulations! You are correct')
+        else:
+            print('Sorry, that is incorrect, please try again')
    
 
 
@@ -63,6 +71,7 @@ def main():
     time.sleep(1)
     display_rules()
     conundrum_game() 
+    user_guess()
    
 main()
 
