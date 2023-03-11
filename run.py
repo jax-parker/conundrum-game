@@ -39,4 +39,6 @@ def main():
 
     time.sleep(1.2)
 
+    main()
+
     
