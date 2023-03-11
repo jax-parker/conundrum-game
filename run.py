@@ -21,22 +21,22 @@ def conundrum_game():
     '''
     Generate scrambled, random word from the list of words.
     '''
-    word_list = ['apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone']
+    word_list = ['apple', 'telvision', 'science', 'computer', 'kitchen',
+    'xylophone']
     random_word = random.choice(word_list)
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
     guess = ''
-    
     print(f'Your conundrum is: {scrambled_word}')
     tries = 3
     while tries >0:
         tries = tries -1
-        guess != random_word
         guess = input('Enter your answer:')
         if guess == random_word:
-            print('Congratulations! You got it!')
+            print('\nCongratulations! You got it!')
             break
         else:
-            print("Sorry, that's incorrect")
+            print("\nSorry, that's incorrect")
+        
 
 def restart_game():
     '''
@@ -59,8 +59,8 @@ def display_rules():
     Displays the rules of the game
     '''
     print('HOW TO PLAY:')
-    print('We have scrambled up the letters of a word')
-    print('Unscramble the letters and enter your guess below')
+    print('We have scrambled up the letters of a word.\n')
+    print('Unscramble the letters and enter your guess below\n')
     print('You have 3 tries to guess the word - Good Luck!')
 
 
