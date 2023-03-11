@@ -1,5 +1,5 @@
 #Import necessary libraries
-#Welcome message
+#Welcome message - done
 #User inputs name (input valid?)
 #Define the main function (def conundrum game)
 #Define the variables (word list)
@@ -18,27 +18,40 @@ from random import shuffle
 import time
 
 #Create a list of words to randomly be chosen
-WORDS = ('apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone')
+#WORDS = ('apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone')
+
+
+def display_rules():
+    '''
+    Displays the rules of the game
+    '''
+    print('HOW TO PLAY:')
+    print('We have scrambled up the letters of a word')
+    print('Unscramble the letters and enter your guess below')
+    print('You have 3 tries to guess the word - Good Luck!')
+
+
 
 def main():
     '''
     Welcome message, rules and name input
     '''
-    print('---------------------------------\n')
+    print('---------------------------------')
     print('         WELCOME TO THE          ')
-    print('         CONUNDRUM GAME          \n')
-    print('----------------------------------\n')
+    print('         CONUNDRUM GAME          ')
+    print('----------------------------------')
     print('Please enter your name:')
     name = ''
     while True:
         name = input()
         if name.isalpha():
             break
-        print ('Please only use letters for your name\n')
+        print ('Please only use letters for your name')
     print(f'Welcome {name}!')
 
     time.sleep(1.2)
-
-    main()
+    display_rules()
+   
+main()
 
     
