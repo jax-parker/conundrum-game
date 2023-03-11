@@ -1,6 +1,6 @@
-#Import necessary libraries
+#Import necessary libraries - done
 #Welcome message - done
-#User inputs name (input valid?)
+#User inputs name (input valid?) - done
 #Define the main function (def conundrum game)
 #Define the variables (word list)
 #Pick random word
@@ -17,8 +17,20 @@ import random
 from random import shuffle
 import time
 
-#Create a list of words to randomly be chosen
-#WORDS = ('apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone')
+#Create a list of words to be randomly chosen
+WORDS = ('apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone')
+
+def conundrum_game():
+    word_list = ['animal', 'python', 'soup']
+    random_word = random.choice(word_list)
+    scrambled_word = ''.join(random.sample(random_word, len(random_word)))
+    guess = ''
+    print(scrambled_word)
+ 
+   
+
+
+
 
 
 def display_rules():
@@ -48,9 +60,9 @@ def main():
             break
         print ('Please only use letters for your name')
     print(f'Welcome {name}!')
-
-    time.sleep(1.2)
+    time.sleep(1)
     display_rules()
+    conundrum_game() 
    
 main()
 
