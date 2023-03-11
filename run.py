@@ -26,16 +26,32 @@ def conundrum_game():
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
     guess = ''
     
-
-def user_guess():
     print(f'Your conundrum is: {scrambled_word}')
-    while guess != random_word:
-        guess = input('What is the unscrambled word?')
+    tries = 3
+    while tries >0:
+        tries = tries -1
+        guess != random_word
+        guess = input('Enter your answer:')
         if guess == random_word:
-            print('Congratulations! You are correct')
+            print('Congratulations! You got it!')
         else:
-            print('Sorry, that is incorrect, please try again')
-   
+            print("Sorry, that's incorrect")
+
+def restart_game():
+    '''
+    Function to restart the game or exit
+    '''
+    while True:
+        print('\nWould you like to play again?')
+        print("\nEnter 'y' for YES or 'n' for NO:\n")
+        user_choice = input().strip().lower()
+        if user_choice == 'y':
+            conundrum_game()
+        elif user_choice == 'n':
+            print('Thank you for playing\n')
+            break
+        else:
+            print("Invalid answer. Press 'y' to restart or 'n' to exit game.")
 
 
 
@@ -71,7 +87,7 @@ def main():
     time.sleep(1)
     display_rules()
     conundrum_game() 
-    user_guess()
+    restart_game()
    
 main()
 
