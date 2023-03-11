@@ -1,15 +1,15 @@
 #Import necessary libraries - done
 #Welcome message - done
 #User inputs name (input valid?) - done
-#Define the main function (def conundrum game)
-#Define the variables (word list)
-#Pick random word
-#Scramble word
-#Print scrambled word
+#Define the main function (def conundrum game) - done
+#Define the variables (word list) - done
+#Pick random word - done
+#Scramble word - done
+#Print scrambled word - done
 #User input guess (input valid?)
-#Check if guess is correct
-#Print message to user
-#Ask if user would like to play again (input valid?)
+#Check if guess is correct - done
+#Print message to user - done
+#Ask if user would like to play again (input valid?) - done
 
 '''Python Libraries'''
 import os
@@ -53,10 +53,6 @@ def restart_game():
             break
         else:
             print("Invalid answer. Press 'y' to restart or 'n' to exit game.")
-
-
-
-
 
 def display_rules():
     '''
