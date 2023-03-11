@@ -21,7 +21,7 @@ def conundrum_game():
     '''
     Generate scrambled, random word from the list of words.
     '''
-    word_list = ['apple', 'telvision', 'science', 'computer', 'kitchen',
+    word_list = ['apple', 'television', 'science', 'computer', 'kitchen',
     'xylophone']
     random_word = random.choice(word_list)
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
@@ -32,11 +32,13 @@ def conundrum_game():
         tries = tries -1
         guess = input('Enter your answer:')
         if guess == random_word:
-            print('\nCongratulations! You got it!')
+            print('\n Congratulations! You got it!')
             break
         else:
-            print("\nSorry, that's incorrect")
-        
+            print("\n Sorry, that's incorrect")
+
+    print(f'\n The correct answer is: {random_word}')
+      
 
 def restart_game():
     '''
