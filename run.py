@@ -17,11 +17,11 @@ import random
 from random import shuffle
 import time
 
-#Create a list of words to be randomly chosen
-WORDS = ('apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone')
-
 def conundrum_game():
-    word_list = ['animal', 'python', 'soup']
+    '''
+    Generate scrambled, random word from the list of words.
+    '''
+    word_list = ['apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone']
     random_word = random.choice(word_list)
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
     guess = ''
