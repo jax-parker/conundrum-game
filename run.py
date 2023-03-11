@@ -20,5 +20,23 @@ import time
 #Create a list of words to randomly be chosen
 WORDS = ('apple', 'telvision', 'science', 'computer', 'kitchen', 'xylophone')
 
-# 
-# 
+def main():
+    '''
+    Welcome message, rules and name input
+    '''
+    print('---------------------------------\n')
+    print('         WELCOME TO THE          ')
+    print('         CONUNDRUM GAME          \n')
+    print('----------------------------------\n')
+    print('Please enter your name:')
+    name = ''
+    while True:
+        name = input()
+        if name.isalpha():
+            break
+        print ('Please only use letters for your name\n')
+    print(f'Welcome {name}!')
+
+    time.sleep(1.2)
+
+    
