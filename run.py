@@ -12,10 +12,26 @@
 #Ask if user would like to play again (input valid?) - done
 
 '''Python Libraries'''
+import gspread
+from google.oauth2.service_account import Credentials
 import os
 import random
 from random import shuffle
 import time
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('high-scores')
+
+'''scores = SHEET.worksheet('scores')
+data = scores.get_all_values()
+print(data)'''
 
 def conundrum_game():
     '''
@@ -32,7 +48,9 @@ def conundrum_game():
         tries = tries -1
         guess = input('Enter your answer:')
         if guess == random_word:
-            print('\n Congratulations! You got it!')
+            global correct
+            correct = guess.count(random_word)
+            print('\n **Congratulations!** You got it!')
             break
         else:
             print("\n Sorry, that's incorrect")
@@ -51,6 +69,7 @@ def restart_game():
         if user_choice == 'y':
             conundrum_game()
         elif user_choice == 'n':
+            print(f'You got {correct} correct!')
             print('Thank you for playing\n')
             break
         else:
@@ -89,5 +108,3 @@ def main():
     restart_game()
    
 main()
-
-    
