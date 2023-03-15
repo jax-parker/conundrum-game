@@ -12,37 +12,25 @@
 #Ask if user would like to play again (input valid?) - done
 
 '''Python Libraries'''
-import gspread
-from google.oauth2.service_account import Credentials
 import os
 import random
 from random import shuffle
 import time
 
-SCOPE = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.file",
-    "https://www.googleapis.com/auth/drive"
-    ]
-CREDS = Credentials.from_service_account_file('creds.json')
-SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('high-scores')
 
-
-'''scores = SHEET.worksheet('scores')
-data = scores.get_all_values()
-print(data)'''
 
 def conundrum_game():
     '''
     Generate scrambled, random word from the list of words.
     '''
     word_list = ['apple', 'television', 'science', 'computer', 'kitchen',
-    'xylophone']
+    'xylophone', 'variable', 'question', 'tomorrow', 'standard', 'manipulate',
+    'simple', 'expression', 'game']
     random_word = random.choice(word_list)
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
     guess = ''
+    global correct
+    correct = 0
     print(f'Your conundrum is: {scrambled_word}')
     tries = 3
     while tries >0:
@@ -50,6 +38,7 @@ def conundrum_game():
         guess = input('Enter your answer:')
         if guess == random_word:
             print('\n **Congratulations!** You got it!')
+            correct = correct +1
             break
         else:
             print("\n Sorry, that's incorrect")
@@ -68,6 +57,7 @@ def restart_game():
         if user_choice == 'y':
             conundrum_game()
         elif user_choice == 'n':
+            print(f'You got {correct}correct')
             print('Thank you for playing\n')
             break
         else:
