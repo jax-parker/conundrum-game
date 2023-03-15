@@ -29,6 +29,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('high-scores')
 
+
 '''scores = SHEET.worksheet('scores')
 data = scores.get_all_values()
 print(data)'''
@@ -48,15 +49,13 @@ def conundrum_game():
         tries = tries -1
         guess = input('Enter your answer:')
         if guess == random_word:
-            global correct
-            correct = guess.count(random_word)
             print('\n **Congratulations!** You got it!')
             break
         else:
             print("\n Sorry, that's incorrect")
 
     print(f'\n The correct answer is: {random_word}')
-      
+     
 
 def restart_game():
     '''
@@ -69,7 +68,6 @@ def restart_game():
         if user_choice == 'y':
             conundrum_game()
         elif user_choice == 'n':
-            print(f'You got {correct} correct!')
             print('Thank you for playing\n')
             break
         else:
