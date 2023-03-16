@@ -13,6 +13,7 @@
 
 '''Python Libraries'''
 import os
+import subprocess
 import random
 from random import shuffle
 import time
@@ -21,7 +22,8 @@ SCORE = 0
 
 def conundrum_game():
     '''
-    Generate scrambled, random word from the list of words.
+    Generate scrambled, random word from the list of words. Count the number
+    of tries by the user if incorrect, after 3 goes print the correct answer.
     '''
     word_list = ['apple', 'television', 'science', 'computer', 'kitchen',
     'xylophone', 'variable', 'question', 'tomorrow', 'standard', 'manipulate',
@@ -56,6 +58,8 @@ def restart_game():
         user_choice = input().strip().lower()
         if user_choice == 'y':
             #print('SCORE when Y is clicked: ', SCORE)
+            clear = lambda: subprocess.call('cls||clear', shell=True)
+            clear()
             conundrum_game()
         elif user_choice == 'n':
             #print('THE SCORE IS: ', SCORE)
@@ -72,7 +76,7 @@ def display_rules():
     print('HOW TO PLAY:')
     print('We have scrambled up the letters of a word.\n')
     print('Unscramble the letters and enter your guess below\n')
-    print('You have 3 tries to guess the word - Good Luck!')
+    print('You have 3 tries to guess the word - Good Luck!\n')
 
 
 
@@ -92,7 +96,7 @@ def main():
             break
         print ('Please only use letters for your name')
     print(f'Welcome {name}!')
-    print('MAIN SCORE: ', SCORE)
+    #print('MAIN SCORE: ', SCORE)
     time.sleep(1)
     display_rules()
     conundrum_game() 
