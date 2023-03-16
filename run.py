@@ -29,7 +29,6 @@ def conundrum_game():
     random_word = random.choice(word_list)
     scrambled_word = ''.join(random.sample(random_word, len(random_word)))
     guess = ''
-    # SCORE = 0
     print(f'Your conundrum is: {scrambled_word}')
     tries = 3
     while tries >0:
@@ -39,7 +38,7 @@ def conundrum_game():
             global SCORE
             print('\n **Congratulations!** You got it!')
             SCORE = SCORE + 1
-            print('INCREMENTED SCORE: ', SCORE)
+            #print('INCREMENTED SCORE: ', SCORE)
             break
         else:
             print("\n Sorry, that's incorrect")
@@ -56,10 +55,10 @@ def restart_game():
         print("\nEnter 'y' for YES or 'n' for NO:\n")
         user_choice = input().strip().lower()
         if user_choice == 'y':
-            print('SCORE when Y is clicked: ', SCORE)
+            #print('SCORE when Y is clicked: ', SCORE)
             conundrum_game()
         elif user_choice == 'n':
-            print('THE SCORE IS: ', SCORE)
+            #print('THE SCORE IS: ', SCORE)
             print(f'You got {SCORE} correct!')
             print('Thank you for playing\n')
             break
