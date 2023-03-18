@@ -35,12 +35,11 @@ def conundrum_game():
     tries = 3
     while tries >0:
         tries = tries -1
-        guess = input('Enter your answer:')
+        guess = input('\nEnter your answer:')
         if guess == random_word:
             global SCORE
             print('\n **Congratulations!** You got it!')
             SCORE = SCORE + 1
-            #print('INCREMENTED SCORE: ', SCORE)
             break
         else:
             print("\n Sorry, that's incorrect")
@@ -57,26 +56,31 @@ def restart_game():
         print("\nEnter 'y' for YES or 'n' for NO:\n")
         user_choice = input().strip().lower()
         if user_choice == 'y':
-            #print('SCORE when Y is clicked: ', SCORE)
-            clear = lambda: subprocess.call('cls||clear', shell=True)
-            clear()
+            clear_screen()
             conundrum_game()
         elif user_choice == 'n':
-            #print('THE SCORE IS: ', SCORE)
             print(f'You got {SCORE} correct!')
-            print('Thank you for playing\n')
+            print('\nThank you for playing\n')
             break
         else:
             print("Invalid answer. Press 'y' to restart or 'n' to exit game.")
+
+def clear_screen():
+    if os.name == 'nt':
+        os.system('clear')
+    else:
+        os.system('clear')
 
 def display_rules():
     '''
     Displays the rules of the game
     '''
-    print('HOW TO PLAY:')
+    print('\nHOW TO PLAY:')
     print('We have scrambled up the letters of a word.\n')
     print('Unscramble the letters and enter your guess below\n')
     print('You have 3 tries to guess the word - Good Luck!\n')
+    
+    
 
 
 
@@ -99,6 +103,8 @@ def main():
     #print('MAIN SCORE: ', SCORE)
     time.sleep(1)
     display_rules()
+    time.sleep(7)
+    clear_screen()
     conundrum_game() 
     restart_game()
    
