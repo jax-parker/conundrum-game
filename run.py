@@ -1,17 +1,3 @@
-#Import necessary libraries - done
-#Welcome message - done
-#User inputs name (input valid?) - done
-#Define the main function (def conundrum game) - done
-#Define the variables (word list) - done
-#Pick random word - done
-#Scramble word - done
-#Print scrambled word - done
-#User input guess (input valid?)
-#Check if guess is correct - done
-#Print message to user - done
-#Ask if user would like to play again (input valid?) - done
-
-'''Python Libraries'''
 import os
 import subprocess
 import random
