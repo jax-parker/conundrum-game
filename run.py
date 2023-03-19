@@ -5,17 +5,18 @@ from random import shuffle
 import time
 
 SCORE = 0
+def scramble_word(word):
+    return ''.join(random.sample(word, len(word)))
 
 def conundrum_game():
     '''
     Generate scrambled, random word from the list of words. Count the number
     of tries by the user if incorrect, after 3 goes print the correct answer.
     '''
-    word_list = ['apple', 'television', 'science', 'computer', 'kitchen',
-    'xylophone', 'variable', 'question', 'tomorrow', 'standard', 'manipulate',
-    'simple', 'expression', 'game']
-    random_word = random.choice(word_list)
-    scrambled_word = ''.join(random.sample(random_word, len(random_word)))
+    word_list = ['apple', 'simple', 'computer']
+    word_dict = {word: scramble_word(word) for word in word_list}
+    random_word = random.choice(list(word_dict.keys()))
+    scrambled_word = word_dict[random_word]
     guess = ''
     print(f'Your conundrum is: {scrambled_word}')
     tries = 3
