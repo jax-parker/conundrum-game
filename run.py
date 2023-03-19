@@ -6,11 +6,14 @@ import time
 
 SCORE = 0
 def scramble_word(word):
+    '''
+    Return a scrambled word from the random word 
+    '''
     return ''.join(random.sample(word, len(word)))
 
 def conundrum_game():
     '''
-    Generate scrambled, random word from the list of words. Count the number
+    Generate random word from the dict list of words. Count the number
     of tries by the user if incorrect, after 3 goes print the correct answer.
     '''
     word_list = ['apple', 'simple', 'computer', 'tomorrow', 'sunset',
@@ -67,10 +70,6 @@ def display_rules():
     print('We have scrambled up the letters of a word.\n')
     print('Unscramble the letters and enter your guess below\n')
     print('You have 3 tries to guess the word - Good Luck!\n')
-    
-    
-
-
 
 def main():
     '''
@@ -93,7 +92,6 @@ def main():
     display_rules()
     time.sleep(7)
     clear_screen()
-    conundrum_game() 
+    conundrum_game()
     restart_game()
-   
 main()
