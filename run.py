@@ -13,14 +13,15 @@ def conundrum_game():
     Generate scrambled, random word from the list of words. Count the number
     of tries by the user if incorrect, after 3 goes print the correct answer.
     '''
-    word_list = ['apple', 'simple', 'computer']
+    word_list = ['apple', 'simple', 'computer', 'tomorrow', 'sunset',
+    'variable', 'television', 'history', 'switch']
     word_dict = {word: scramble_word(word) for word in word_list}
     random_word = random.choice(list(word_dict.keys()))
     scrambled_word = word_dict[random_word]
     guess = ''
     print(f'Your conundrum is: {scrambled_word}')
     tries = 3
-    while tries >0:
+    while tries > 0:
         tries = tries -1
         guess = input('\nEnter your answer:')
         if guess == random_word:
