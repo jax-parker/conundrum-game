@@ -21,14 +21,13 @@ Player chooses not to play again | Input 'n', the incremented score shows and a 
 Input | Expected Result | Actual Result | Pass/Fail
 -------------|-----------------|---------------|----------
 Type something other than letters when asked for name | Receive a message "Please only use letters for your name!" | As expected | Pass
-Type answer using uppercase| Receive a message "Please use all lowercase letters" | As expected | Pass
 Type something other than y or n to exit or play again| Receive a message "Invalid Answer. Press y to restart or n to exit game" | As expected | Pass
 
 ## Bugs
 
 Bug | Status | Fix  
 ----|--------|-----
-Game does not check to see if all lowercase is used | Resolved | 
+Game does not allow user to enter caps or whitespace in answer| Resolved | added .strip() and .lower() to guess variable.
 
 
 ## Remaining Bugs
