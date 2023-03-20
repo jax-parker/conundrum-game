@@ -1,8 +1,6 @@
-#Python Libraries
+# Python Libraries
 import os
-import subprocess
 import random
-from random import shuffle
 import time
 
 # Global variable for scoring as per Student support advice
@@ -11,7 +9,8 @@ SCORE = 0
 
 def scramble_word(word):
     '''
-    Return a scrambled word from the random word
+    Return a random word from the list using the sample function
+    Use join to convert to a string
     '''
     return ''.join(random.sample(word, len(word)))
 
