@@ -2,11 +2,11 @@
 import os
 import random
 import time
-from rich import print
+from rich.console import Console
 
 # Global variable for scoring as per Student support advice
 SCORE = 0
-
+console = Console()
 
 def scramble_word(word):
     '''
@@ -38,16 +38,17 @@ def conundrum_game():
     tries = 3
     while tries > 0:
         tries = tries - 1
-        guess = input('\nEnter your answer:').strip().lower()
+        guess = input('\nEnter your answer: ').strip().lower()
         if guess == random_word:
             global SCORE
-            print('\n **Congratulations!** You got it!')
+            console.print('\n **Congratulations!** You got it!',
+            style = "green")
             SCORE = SCORE + 1
             break
         else:
-            print("\n Sorry, that's incorrect...")
+            console.print("\n Sorry, that's incorrect...", style="red")
 
-    print(f'\n The correct answer is: {random_word}')
+    console.print(f'\n The correct answer is: [bold blue]{random_word}[/]')
 
 
 def restart_game():
@@ -58,14 +59,14 @@ def restart_game():
     '''
     while True:
         print('\nWould you like to play again?')
-        print("\nEnter 'y' for YES or 'n' for NO:\n")
+        console.print("\nEnter [green]'y'[/] for YES or [red]'n'[/] for NO:\n")
         user_choice = input().strip().lower()
         if user_choice == 'y':
             clear_screen()
             conundrum_game()
         elif user_choice == 'n':
             print(f'You got {SCORE} correct!')
-            print('\nThank you for playing\n')
+            console.print('\nThank you for playing ! \n',style="reverse")
             break
         else:
             print("Invalid answer. Press 'y' to restart or 'n' to exit game.")
@@ -95,20 +96,24 @@ def display_rules():
 def main():
     '''
     Displays the welcome message, asks user to input name,
-    checks if name is letters only, welcomes the user.
+    checks if name is letters only, welcomes the user, rich syle added.
     '''
-    print('---------------------------------')
-    print('         WELCOME TO THE          ')
-    print('         CONUNDRUM GAME          ')
-    print('----------------------------------')
-    print('Please enter your name:')
+    console.print('---------------------------------',
+    style="bold red on white ")
+    console.print('         WELCOME TO THE          ',
+    style="bold red on white")
+    console.print('         CONUNDRUM GAME          ',
+    style="bold red on white")
+    console.print('---------------------------------',
+    style="bold red on white")
+    print('\nPlease enter your name:\n')
     name = ''
     while True:
         name = input()
         if name.isalpha():
             break
-        print('Please only use letters for your name')
-    print(f'Welcome {name}!')
+        print('/nPlease only use letters for your name')
+    console.print(f'Welcome {name}!', style="bold red on white")
     time.sleep(1)
     display_rules()
     time.sleep(7)
