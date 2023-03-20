@@ -37,7 +37,7 @@ def conundrum_game():
     tries = 3
     while tries > 0:
         tries = tries - 1
-        guess = input('\nEnter your answer:')
+        guess = input('\nEnter your answer:').strip().lower()
         if guess == random_word:
             global SCORE
             print('\n **Congratulations!** You got it!')
