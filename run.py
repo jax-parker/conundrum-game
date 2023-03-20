@@ -44,7 +44,7 @@ def conundrum_game():
             SCORE = SCORE + 1
             break
         else:
-            print("\n Sorry, that's incorrect, try again...")
+            print("\n Sorry, that's incorrect...")
 
     print(f'\n The correct answer is: {random_word}')
 
