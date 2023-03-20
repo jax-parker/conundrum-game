@@ -2,6 +2,7 @@
 import os
 import random
 import time
+from rich import print
 
 # Global variable for scoring as per Student support advice
 SCORE = 0
