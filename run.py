@@ -5,27 +5,35 @@ from random import shuffle
 import time
 
 SCORE = 0
+
+
 def scramble_word(word):
     '''
-    Return a scrambled word from the random word 
+    Return a scrambled word from the random word
     '''
     return ''.join(random.sample(word, len(word)))
+
 
 def conundrum_game():
     '''
     Generate random word from the dict list of words. Count the number
     of tries by the user if incorrect, after 3 goes print the correct answer.
     '''
-    word_list = ['apple', 'simple', 'computer', 'tomorrow', 'sunset',
-    'variable', 'television', 'history', 'switch']
-    word_dict = {word: scramble_word(word) for word in word_list}
+    word_list = [
+        'apple', 'simple', 'computer', 'tomorrow', 'sunset',
+        'variable', 'television', 'history', 'switch'
+        ]
+    word_dict = {
+        word: scramble_word(word) for word in word_list
+        }
     random_word = random.choice(list(word_dict.keys()))
     scrambled_word = word_dict[random_word]
+
     guess = ''
     print(f'Your conundrum is: {scrambled_word}')
     tries = 3
     while tries > 0:
-        tries = tries -1
+        tries = tries - 1
         guess = input('\nEnter your answer:')
         if guess == random_word:
             global SCORE
@@ -36,7 +44,7 @@ def conundrum_game():
             print("\n Sorry, that's incorrect")
 
     print(f'\n The correct answer is: {random_word}')
-     
+
 
 def restart_game():
     '''
@@ -56,11 +64,13 @@ def restart_game():
         else:
             print("Invalid answer. Press 'y' to restart or 'n' to exit game.")
 
+
 def clear_screen():
     if os.name == 'nt':
         os.system('clear')
     else:
         os.system('clear')
+
 
 def display_rules():
     '''
@@ -70,6 +80,7 @@ def display_rules():
     print('We have scrambled up the letters of a word.\n')
     print('Unscramble the letters and enter your guess below\n')
     print('You have 3 tries to guess the word - Good Luck!\n')
+
 
 def main():
     '''
@@ -85,13 +96,14 @@ def main():
         name = input()
         if name.isalpha():
             break
-        print ('Please only use letters for your name')
+        print('Please only use letters for your name')
     print(f'Welcome {name}!')
-    #print('MAIN SCORE: ', SCORE)
     time.sleep(1)
     display_rules()
     time.sleep(7)
     clear_screen()
     conundrum_game()
     restart_game()
+
+
 main()
