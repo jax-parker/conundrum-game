@@ -3,6 +3,8 @@ import os
 import random
 import time
 from rich.console import Console
+from rich import pretty
+pretty.install()
 
 # Global variable for scoring as per Student support advice
 SCORE = 0
