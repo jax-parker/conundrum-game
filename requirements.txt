@@ -1,1 +1,1 @@
-pretty.install()
+In [1]: %load_ext rich
