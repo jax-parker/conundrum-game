@@ -35,7 +35,7 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 ***
 ## Flowchart
 ![Flowchart](images/flowchart-conundrumgame.png)
-#### User stories
+## User stories
 
     * As a visiting user I would like to be able to understand and play the game after reading the rules.
     * As a visiting user I would like to be able to choose to end the game or play again.
@@ -102,7 +102,7 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 * 
 ***
 ### Testing
-Testing document can be found [here](TESTING.md)
+Testing document can be found [here](testing.md)
 
 ### Deployment
 The game was deployed on Heroku. The following steps were used to deploy the game to Heroku:
@@ -128,7 +128,7 @@ The game was deployed on Heroku. The following steps were used to deploy the gam
 ## Credits
 ### Code
 The python code was learned from the Code Institute Full Stack Software Developer Course and by practising the Love Sanwiches project.
-Syntax for the random and shuffole were assisted by my Mentor, Ronan McClelland.
+Syntax for the random and shuffle were assisted by my Mentor, Ronan McClelland.
 Bug for the scoring was assisted by Code Institute Student Support - Rebecca.
 Code Institue for the Python Linter.
 
