@@ -5,14 +5,13 @@ import time
 from rich.console import Console
 
 
-# Global variable for scoring as per Student support advice
+# Global variable for scoring as per CI Student Support instruction
 SCORE = 0
 console = Console()
 
 def scramble_word(word):
     '''
-    Return a random word from the list using the sample function
-    Use join to convert to a string
+    Return a random word from the word list using the random sample method 
     '''
     return ''.join(random.sample(word, len(word)))
 
