@@ -113,7 +113,7 @@ def main():
         name = input()
         if name.isalpha():
             break
-        print('/nPlease only use letters for your name')
+        print('\nPlease only use letters for your name')
     console.print(f'Welcome {name}!', style="bold red on white")
     time.sleep(1)
     display_rules()
