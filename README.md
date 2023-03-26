@@ -37,9 +37,10 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 ![Flowchart](images/flowchart-conundrumgame.png)
 ## User stories
 
+    * As a visiting user I would like to be able to input my name to make the game personal to me.
     * As a visiting user I would like to be able to understand and play the game after reading the rules.
     * As a visiting user I would like to be able to choose to end the game or play again.
-    * As a visiting user I would like to be able to see how many answers I got correct.
+    * As a visiting user I would like to be able to see how many answers I got correct when I choose to stop playing.
     
 ## Features
 
@@ -68,9 +69,11 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 
 #### Input validation and Error Checking
     
-    * The computer will show a message to the user if the name input is incorrect and instruct the user of the correct input required.
+    * The computer will show a message to the user if the name input contains numbers and instruct the user of the correct input required.
+    * The computer will show a message to the user if anything other than y or n is entered when prompted to restart or exit the game.
     
 ![Game-message](images/game-inputerror.png)
+![Game-message](images/game-invalidchoice.png)
 
 #### The Game Ends - User Chooses To Exit Game
     
@@ -80,7 +83,7 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 
 ### Features Left to Implement
 - Allow the user to choose the length of the word they want to unscramble
-- 
+- Create a high scores feature to store high scores for returning users
 ***
 
 ### Technologies
@@ -94,18 +97,42 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 	- os - to eliminate previous code and clear the screen making it clutter freee and easier to read.
     - random - to randomise the choice of word.
     - time - for delaying the rules appearing and the start of the game after the rules are read.
+    - console - from rich.console taken from [Textualize](https://www.textualize.io) to create styles inside the Heroku terminal and rich==13.3.2 was added to the requirements.txt file in order for rich to work in Heroku.
 ### Programs
 * GitHub - used to store the project
 * Git - used for version control
 * Heroku - used to deploy the app
 * [Lucid Chart](https://lucid.app/lucidchart/18827059-8da4-4180-b067-a73ce2939e2e/edit?invitationId=inv_bea336d3-f7ab-4a83-99fb-8d2ad2755c00&page=rMoEJG9m52NN#) - used to create the flowchart for the project
-* 
+
 ***
 ### Testing
 Testing document can be found [here](testing.md)
 
 ### Deployment
-The game was deployed on Heroku. The following steps were used to deploy the game to Heroku:
+### Project Creation
+The project was started by opening my Github profile page, clicking on repositories and new. This project needed the [Code Institute Python Essentials templat](https://github.com/Code-Institute-Org/python-essentials-template) in order to create a deployed version for my portfolio and for assessor testing. I named my project then clicked to render the repository. I then clicked the Gitpod button to start to build my workspace.
+
+The following commands were used throughout the project:
+
+* git add - Was used to add changes to the local repository.
+* git commit -m *commit message explaining the updates* - This command was used to commit changes to the local repository.
+* git push - This command is used to push all commited changes to the GitHub repository.
+* to test the game within the workspace terminal I used python3 run.py
+
+### Using A Github Branch
+I wanted a space to try out code without interferring with the code I'd already written and my Mentor gave me a [link](https://www.atlassian.com/git/tutorials/using-branches) to learn about Git branching. This was fantastic advise as it allowed me to try out code before merging it back into my main code when it finally worked.
+
+1. Commit and push your current branch. In the terminal type git branch to see where you are (main).
+2. Type git checkout -b nameofbranch (to create a new branch) or just git checkout nameofbranch to switch.
+3. Git will tell you it has switched to your new or previously named branch. Any changes made now will only be affective in your new branch.
+4. Commit changes as normal.
+5. To move changes to the main project - git checkout main and type git branch to recheck where you are.
+6. To merge your new code into your project type git merge nameofbranch.
+7. You can choose to delete your branch git branch -d nameofbranch without loosing any history or keep it.
+
+### Deploying to Heroku
+The game was deployed on Heroku in order to create a deployed version for my portfolio and for assessor testing.
+The following steps were used to deploy the game to Heroku:
 
   * Sign into Heroku.
   * On the main dashboard choose to Create new app.
@@ -122,7 +149,6 @@ The game was deployed on Heroku. The following steps were used to deploy the gam
   * To deploy automatically you will need to select Enable Automatic Deploys which will rebuild the app every time you push a change to GitHub.
   * To deploy manually go to the Manual deploy section below and click Deploy Branch. Just remember you will need to do this every time you make a change to your code on Github.
   * Below you will see your app was successfully deployed with a view button below this that will take you to the URL of your deployed app.
-
 
 ***
 ## Credits

@@ -7,6 +7,7 @@ from rich.console import Console
 
 # Global variable for scoring as per CI Student Support instruction
 SCORE = 0
+
 console = Console()
 
 def scramble_word(word):
@@ -96,7 +97,8 @@ def display_rules():
 def main():
     '''
     Displays the welcome message, asks user to input name,
-    checks if name is letters only, welcomes the user, rich syle added.
+    checks if name is letters only, welcomes the user.
+    Runs the functions with time delays and clear screen function.
     '''
     console.print('---------------------------------',
     style="bold red on white ")
@@ -108,6 +110,7 @@ def main():
     style="bold red on white")
     print('\nPlease enter your name:\n')
     name = ''
+    
     while True:
         name = input()
         if name.isalpha():
