@@ -10,9 +10,10 @@ SCORE = 0
 
 console = Console()
 
+
 def scramble_word(word):
     '''
-    Return a random word from the word list using the random sample method 
+    Return a random word from the word list using the random sample method
     '''
     return ''.join(random.sample(word, len(word)))
 
@@ -42,8 +43,7 @@ def conundrum_game():
         guess = input('\nEnter your answer: ').strip().lower()
         if guess == random_word:
             global SCORE
-            console.print('\n **Congratulations!** You got it!',
-            style = "green")
+            console.print('\n **Congratulations!** You got it!', style="green")
             SCORE = SCORE + 1
             break
         else:
@@ -67,7 +67,7 @@ def restart_game():
             conundrum_game()
         elif user_choice == 'n':
             print(f'You got {SCORE} correct!')
-            console.print('\nThank you for playing ! \n',style="reverse")
+            console.print('\nThank you for playing ! \n', style="reverse")
             break
         else:
             print("Invalid answer. Press 'y' to restart or 'n' to exit game.")
@@ -100,17 +100,12 @@ def main():
     checks if name is letters only, welcomes the user.
     Runs the functions with time delays and clear screen function.
     '''
-    console.print('---------------------------------',
-    style="bold red on white ")
-    console.print('         WELCOME TO THE          ',
-    style="bold red on white")
-    console.print('         CONUNDRUM GAME          ',
-    style="bold red on white")
-    console.print('---------------------------------',
-    style="bold red on white")
+    console.print('---------------------------------', style="bold red on white")
+    console.print('         WELCOME TO THE          ', style="bold red on white")
+    console.print('         CONUNDRUM GAME          ', style="bold red on white")
+    console.print('---------------------------------', style="bold red on white")
     print('\nPlease enter your name:\n')
     name = ''
-    
     while True:
         name = input()
         if name.isalpha():

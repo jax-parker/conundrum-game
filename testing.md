@@ -28,6 +28,7 @@ Type something other than y or n to exit or play again| Receive a message "Inval
 Bug | Status | Fix  
 ----|--------|-----
 Game does not allow user to enter caps or whitespace in answer| Resolved | added .strip() and .lower() to guess variable.
+Game did not run with styling in Heroku| Resolved | Added 
 
 
 ## Remaining Bugs
@@ -38,22 +39,28 @@ Game does not allow user to enter caps or whitespace in answer| Resolved | added
 
 * [CI Python Linter](https://pep8ci.herokuapp.com/)
 
-I used Code Institute's Python Linter which confirmed that there are no errors. 
+I used Code Institute's Python Linter which confirmed all good except lines 103 to 106 were too long. I tried moving the code over 2 lines but it would not run correctly. I have currently left the line as too long and will investigate how to solve this issue at a later date. 
 
-[PEP8CI](images/pep8ci.png)
+[PEP8CI](images/ci-linter.png)
 
 ## Testing User Stories
 
+* As a visiting user I would like to be able to input my name to make the game personal to me.
+    * The user is asked to input their name and a welcome message including the name is displayed.<br>
+   
+   ![](images/game-welcome.png)
+
 * As a visiting user I would like to be able to understand and play the game after reading the rules.
-    * The user is playing alone. The rules of the game are displayed for seven seconds before the screen clears and the game starts.
-   ![](images/game-message.png)
+    * The user is playing alone. The rules of the game are displayed for seven seconds before the screen clears and the game starts.<br>
+   
+   ![](images/game-rules.png)
 
 * As a visiting user I would like to be able to choose to end the game or play again.
-    * User should enter 'y' to play again the game or 'no' to exit the game.
+    * User should enter 'y' to play again the game or 'no' to exit the game.<br>
 
     ![](images/game-playagain.png)
 
 * As a visiting user I would like to be able to see how many answers I got correct.
-    * When the question to play again shows on the screen and if user enters no, the score should be displayed on the screen where the user can see how many conundrums they got correct.  
+    * When the question to play again shows on the screen and if user enters no, the score should be displayed on the screen where the user can see how many conundrums they got correct.<br> 
     
     ![](images/game-correct.png)

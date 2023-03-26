@@ -97,7 +97,7 @@ The live version of my project can be found [here] (https://conundrum-game.herok
 	- os - to eliminate previous code and clear the screen making it clutter freee and easier to read.
     - random - to randomise the choice of word.
     - time - for delaying the rules appearing and the start of the game after the rules are read.
-    - console - from rich.console taken from [Textualize](https://www.textualize.io) to create styles inside the Heroku terminal and rich==13.3.2 was added to the requirements.txt file in order for rich to work in Heroku.
+    - console - from rich.console taken from [Textualize](https://www.textualize.io) to create styles inside the Heroku terminal and rich==13.3.2 was added to the requirements.txt file in order for rich to work in Heroku. Colours and reverse block was used for the user messages and some of the instruction to improve readablity of the game.
 ### Programs
 * GitHub - used to store the project
 * Git - used for version control
